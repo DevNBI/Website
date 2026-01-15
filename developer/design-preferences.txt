@@ -1,0 +1,45 @@
+Light Theme
+This theme has not been implemented yet.
+
+Dark Theme
+• Animated Background: Dark, with a flowing wave animation (colour:)
+• Background Solid Colour:
+• Main Body Colour:
+• Secondary Body Colour:
+• Navigation Bar Colour:
+• Footer Colour:
+• Bar Colour:
+• Input Bar Colour:
+• Card Colour:
+• Button Colour:
+• Menu Colour:
+• Dropdown Menu Colour:
+• Context Menu Colour:
+• Header Text Colour:
+• Sub-Header Text Colour:
+• Regular Text Colour:
+• FinePrint Text Colour:
+• Hyperlink Text Colour:
+• Border Colour:
+• Highlight Area Colour:
+• Scrollbar: Transparent background (only the scroller is visible, colour:)
+• Icons: Rounded & Filled (Colour:)
+
+Midnight Theme
+This theme has not been implemented yet.
+
+Amoled Theme
+This theme has not been implemented yet.
+
+Properties:
+• Width: 97%
+• Corner Radius: 10PX
+• Responsive styling included in all pages
+• Default highlighting disabled when interacting with all elements (for a clean user experience)
+• File paths are to contain "#" until filled in
+• All icons and images will be in PNG format (icons must be 512 X 512 PX)
+• All pages must include paths for the FavIcon (logo), CSS and JS files
+
+Notes:
+• These design preferences are for developers and contributors working on the website. Please refer to them globally across all pages.
+• There's pages for an element playground as well as a colour palette designed for inspiration and ideas.
