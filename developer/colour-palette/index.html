@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Colour Palette</title>
+<style>
+*{
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    margin:0;
+    background:#000;
+    padding:0;
+}
+
+.top-bar{
+    width:100%;
+    background:rgba(30,30,30,.9);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 24px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.top-bar-title{
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.theme-toggle{
+    width:24px;
+    height:24px;
+    cursor:pointer;
+    filter:none;
+}
+
+.search-bar{
+    width:98%;
+    max-width:1200px;
+    margin:32px auto;
+    background:rgba(30,30,30,.9);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    padding:14px 16px;
+}
+
+.search-bar input{
+    flex:1;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:#fff;
+    font-size:16px;
+    margin-left:10px;
+}
+
+.search-icon{
+    width:20px;
+    height:20px;
+    filter:none;
+}
+
+.main{
+    width:98%;
+    max-width:1200px;
+    margin:0 auto 60px auto;
+    background:rgba(30,30,30,.9);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:10px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+.secondary-body{
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:10px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    background:rgba(25,25,25,.9);
+}
+
+.category-title{
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.divider{
+    width:100%;
+    height:1px;
+    background:rgba(255,255,255,.2);
+    margin-bottom:6px;
+}
+
+.bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 16px;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:10px;
+    margin-bottom:12px;
+}
+
+.hex{
+    font-weight:bold;
+}
+
+.copy-btn{
+    background:transparent;
+    border:1px solid currentColor;
+    border-radius:10px;
+    padding:6px 16px;
+    cursor:pointer;
+    color:inherit;
+}
+
+.copy-btn:hover{
+    opacity:.85;
+}
+
+body[data-theme="light"]{
+    background:#ffffff;
+}
+
+body[data-theme="light"] .top-bar{
+    background:#e0e0e0;
+    border-bottom:1px solid rgba(0,0,0,.2);
+}
+
+body[data-theme="light"] .top-bar-title{
+    color:#000;
+}
+
+body[data-theme="light"] .theme-toggle{
+    filter:invert(1);
+}
+
+body[data-theme="light"] .search-bar{
+    background:#e0e0e0;
+    border:1px solid rgba(0,0,0,.2);
+}
+
+body[data-theme="light"] .search-bar input{
+    color:#000;
+}
+
+body[data-theme="light"] .search-icon{
+    filter:invert(1);
+}
+
+body[data-theme="light"] .main{
+    background:#e0e0e0;
+    border:1px solid rgba(0,0,0,.2);
+}
+
+body[data-theme="light"] .secondary-body{
+    background:#d0d0d0;
+    border:1px solid rgba(0,0,0,.2);
+}
+
+body[data-theme="light"] .category-title{
+    color:#000;
+}
+
+body[data-theme="light"] .divider{
+    background:rgba(0,0,0,.2);
+}
+
+body[data-theme="light"] .bar{
+    border:1px solid rgba(0,0,0,.2);
+}
+
+@media(max-width:768px){
+    .bar{
+        flex-direction:column;
+        gap:10px;
+        align-items:flex-start;
+    }
+    .copy-btn{
+        align-self:flex-end;
+    }
+    .search-bar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+}
+</style>
+</head>
+<body>
+    
+<div class="top-bar">
+    <span class="top-bar-title">Colour Palette</span>
+    <img src="theme.png" alt="Theme Toggle Icon" class="theme-toggle">
+</div>
+
+<div class="search-bar">
+    <img src="search.png" alt="Search Icon" class="search-icon">
+    <input type="text" placeholder="Search a colour or value..." id="searchInput">
+</div>
+
+<div class="main">
+
+<div class="secondary-body">
+<div class="category-title">White</div><div class="divider"></div>
+<div class="bar" style="background:#FFFFFF"><span class="hex">#FFFFFF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#F2F2F2"><span class="hex">#F2F2F2</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#E6E6E6"><span class="hex">#E6E6E6</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#D9D9D9"><span class="hex">#D9D9D9</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#CCCCCC"><span class="hex">#CCCCCC</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#BFBFBF"><span class="hex">#BFBFBF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#B3B3B3"><span class="hex">#B3B3B3</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#A6A6A6"><span class="hex">#A6A6A6</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#999999"><span class="hex">#999999</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#8C8C8C"><span class="hex">#8C8C8C</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#808080"><span class="hex">#808080</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#737373"><span class="hex">#737373</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#666666"><span class="hex">#666666</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#595959"><span class="hex">#595959</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#4D4D4D"><span class="hex">#4D4D4D</span><button class="copy-btn">Copy</button></div>
+</div>
+
+<div class="secondary-body">
+<div class="category-title">Grey</div><div class="divider"></div>
+<div class="bar" style="background:#E0E0E0"><span class="hex">#E0E0E0</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#CFCFCF"><span class="hex">#CFCFCF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#BEBEBE"><span class="hex">#BEBEBE</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#ADADAD"><span class="hex">#ADADAD</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#9C9C9C"><span class="hex">#9C9C9C</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#8B8B8B"><span class="hex">#8B8B8B</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#7A7A7A"><span class="hex">#7A7A7A</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#696969"><span class="hex">#696969</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#585858"><span class="hex">#585858</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#474747"><span class="hex">#474747</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#363636"><span class="hex">#363636</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#252525"><span class="hex">#252525</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#1A1A1A"><span class="hex">#1A1A1A</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#101010"><span class="hex">#101010</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#080808"><span class="hex">#080808</span><button class="copy-btn">Copy</button></div>
+</div>
+
+<div class="secondary-body"><div class="category-title">Black</div><div class="divider"></div>
+<div class="bar" style="background:#000000"><span class="hex">#000000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#050505"><span class="hex">#050505</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#0A0A0A"><span class="hex">#0A0A0A</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#0F0F0F"><span class="hex">#0F0F0F</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#141414"><span class="hex">#141414</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#191919"><span class="hex">#191919</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#1E1E1E"><span class="hex">#1E1E1E</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#232323"><span class="hex">#232323</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#282828"><span class="hex">#282828</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#2D2D2D"><span class="hex">#2D2D2D</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#323232"><span class="hex">#323232</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#373737"><span class="hex">#373737</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#3C3C3C"><span class="hex">#3C3C3C</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#414141"><span class="hex">#414141</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#464646"><span class="hex">#464646</span><button class="copy-btn">Copy</button></div>
+</div>
+
+<div class="secondary-body"><div class="category-title">Red</div><div class="divider"></div>
+<div class="bar" style="background:#2B0000"><span class="hex">#2B0000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#4D0000"><span class="hex">#4D0000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#660000"><span class="hex">#660000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#800000"><span class="hex">#800000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#990000"><span class="hex">#990000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#B30000"><span class="hex">#B30000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#CC0000"><span class="hex">#CC0000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#E60000"><span class="hex">#E60000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF0000"><span class="hex">#FF0000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF3333"><span class="hex">#FF3333</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF6666"><span class="hex">#FF6666</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF8080"><span class="hex">#FF8080</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF9999"><span class="hex">#FF9999</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFB3B3"><span class="hex">#FFB3B3</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFD6D6"><span class="hex">#FFD6D6</span><button class="copy-btn">Copy</button></div>
+</div>
+
+<div class="secondary-body"><div class="category-title">Green</div><div class="divider"></div>
+<div class="bar" style="background:#002B00"><span class="hex">#002B00</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#004D00"><span class="hex">#004D00</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#006600"><span class="hex">#006600</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#008000"><span class="hex">#008000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#009900"><span class="hex">#009900</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#00B300"><span class="hex">#00B300</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#00CC00"><span class="hex">#00CC00</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#00E600"><span class="hex">#00E600</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#00FF00"><span class="hex">#00FF00</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#33FF33"><span class="hex">#33FF33</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#66FF66"><span class="hex">#66FF66</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#80FF80"><span class="hex">#80FF80</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#99FF99"><span class="hex">#99FF99</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#B3FFB3"><span class="hex">#B3FFB3</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#D6FFD6"><span class="hex">#D6FFD6</span><button class="copy-btn">Copy</button></div>
+</div>
+
+<div class="secondary-body"><div class="category-title">Blue</div><div class="divider"></div>
+<div class="bar" style="background:#00002B"><span class="hex">#00002B</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#00004D"><span class="hex">#00004D</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#000066"><span class="hex">#000066</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#000080"><span class="hex">#000080</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#000099"><span class="hex">#000099</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#0000B3"><span class="hex">#0000B3</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#0000CC"><span class="hex">#0000CC</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#0000E6"><span class="hex">#0000E6</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#0000FF"><span class="hex">#0000FF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#3333FF"><span class="hex">#3333FF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#6666FF"><span class="hex">#6666FF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#8080FF"><span class="hex">#8080FF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#9999FF"><span class="hex">#9999FF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#B3B3FF"><span class="hex">#B3B3FF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#D6D6FF"><span class="hex">#D6D6FF</span><button class="copy-btn">Copy</button></div>
+</div>
+
+<div class="secondary-body"><div class="category-title">Purple</div><div class="divider"></div>
+<div class="bar" style="background:#2B0033"><span class="hex">#2B0033</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#4D0059"><span class="hex">#4D0059</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#660080"><span class="hex">#660080</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#8000A6"><span class="hex">#8000A6</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#9900CC"><span class="hex">#9900CC</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#B300E6"><span class="hex">#B300E6</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#CC00FF"><span class="hex">#CC00FF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#D633FF"><span class="hex">#D633FF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#DF66FF"><span class="hex">#DF66FF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#E899FF"><span class="hex">#E899FF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#F0CCFF"><span class="hex">#F0CCFF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#F5E0FF"><span class="hex">#F5E0FF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#F9EBFF"><span class="hex">#F9EBFF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FCF5FF"><span class="hex">#FCF5FF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFFFFF"><span class="hex">#FFFFFF</span><button class="copy-btn">Copy</button></div>
+</div>
+
+<div class="secondary-body"><div class="category-title">Pink</div><div class="divider"></div>
+<div class="bar" style="background:#33001A"><span class="hex">#33001A</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#59002D"><span class="hex">#59002D</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#800040"><span class="hex">#800040</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#A60053"><span class="hex">#A60053</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#CC0066"><span class="hex">#CC0066</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#E60073"><span class="hex">#E60073</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF0080"><span class="hex">#FF0080</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF3399"><span class="hex">#FF3399</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF66B2"><span class="hex">#FF66B2</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF80BF"><span class="hex">#FF80BF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF99CC"><span class="hex">#FF99CC</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFB3D9"><span class="hex">#FFB3D9</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFCCE6"><span class="hex">#FFCCE6</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFE6F2"><span class="hex">#FFE6F2</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFF2F8"><span class="hex">#FFF2F8</span><button class="copy-btn">Copy</button></div>
+</div>
+
+<div class="secondary-body"><div class="category-title">Orange</div><div class="divider"></div>
+<div class="bar" style="background:#331A00"><span class="hex">#331A00</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#663300"><span class="hex">#663300</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#804000"><span class="hex">#804000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#994D00"><span class="hex">#994D00</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#B35900"><span class="hex">#B35900</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#CC6600"><span class="hex">#CC6600</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#E67300"><span class="hex">#E67300</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF8000"><span class="hex">#FF8000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF9933"><span class="hex">#FF9933</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFB266"><span class="hex">#FFB266</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFC080"><span class="hex">#FFC080</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFD199"><span class="hex">#FFD199</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFE0B3"><span class="hex">#FFE0B3</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFEBD1"><span class="hex">#FFEBD1</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFF4E6"><span class="hex">#FFF4E6</span><button class="copy-btn">Copy</button></div>
+</div>
+
+<div class="secondary-body"><div class="category-title">Yellow</div><div class="divider"></div>
+<div class="bar" style="background:#332B00"><span class="hex">#332B00</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#665500"><span class="hex">#665500</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#806600"><span class="hex">#806600</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#998000"><span class="hex">#998000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#B39900"><span class="hex">#B39900</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#CCB300"><span class="hex">#CCB300</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#E6CC00"><span class="hex">#E6CC00</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFE600"><span class="hex">#FFE600</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFEB33"><span class="hex">#FFEB33</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFF066"><span class="hex">#FFF066</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFF599"><span class="hex">#FFF599</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFF9BF"><span class="hex">#FFF9BF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFFCDD"><span class="hex">#FFFCDD</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFFEF0"><span class="hex">#FFFEF0</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFFFFA"><span class="hex">#FFFFFA</span><button class="copy-btn">Copy</button></div>
+</div>
+
+<div class="secondary-body"><div class="category-title">Brown</div><div class="divider"></div>
+<div class="bar" style="background:#1A0D00"><span class="hex">#1A0D00</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#331A00"><span class="hex">#331A00</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#4D2600"><span class="hex">#4D2600</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#663300"><span class="hex">#663300</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#804000"><span class="hex">#804000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#995000"><span class="hex">#995000</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#B36200"><span class="hex">#B36200</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#CC7400"><span class="hex">#CC7400</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#E68600"><span class="hex">#E68600</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FF9900"><span class="hex">#FF9900</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFB84D"><span class="hex">#FFB84D</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFD699"><span class="hex">#FFD699</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFE6BF"><span class="hex">#FFE6BF</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFF0D9"><span class="hex">#FFF0D9</span><button class="copy-btn">Copy</button></div>
+<div class="bar" style="background:#FFF7EB"><span class="hex">#FFF7EB</span><button class="copy-btn">Copy</button></div>
+</div>
+
+</div>
+
+<script>
+function getContrastText(rgb){
+    const luminance = (0.299*rgb[0] + 0.587*rgb[1] + 0.114*rgb[2]);
+    return luminance < 128 ? '#FFFFFF' : '#000000';
+}
+
+document.querySelectorAll('.bar').forEach(bar=>{
+    const bg = window.getComputedStyle(bar).backgroundColor;
+    const rgb = bg.match(/\d+/g).map(Number);
+    const textColor = getContrastText(rgb);
+    bar.querySelector('.hex').style.color = textColor;
+    const btn = bar.querySelector('.copy-btn');
+    btn.style.color = textColor;
+    btn.style.borderColor = textColor;
+});
+
+document.querySelectorAll('.copy-btn').forEach(b=>{
+    b.onclick = () => navigator.clipboard.writeText(
+        b.parentElement.querySelector('.hex').innerText
+    );
+});
+
+document.querySelector('.theme-toggle').onclick = () => {
+    const body = document.body;
+    const main = document.querySelector('.main');
+    const sections = document.querySelectorAll('.secondary-body');
+    if(body.dataset.theme === 'light'){
+        body.dataset.theme = 'dark';
+        body.style.background = '#000';
+        main.style.background = 'rgba(30,30,30,.9)';
+        sections.forEach(s => s.style.background = 'rgba(30,30,30,.9)');
+    } else {
+        body.dataset.theme = 'light';
+        body.style.background = '#f0f0f0';
+        main.style.background = 'rgba(230,230,230,.9)';
+        sections.forEach(s => s.style.background = 'rgba(230,230,230,.9)');
+    }
+};
+
+document.querySelector('#searchInput').addEventListener('input', function(){
+    const query = this.value.toLowerCase();
+    document.querySelectorAll('.secondary-body').forEach(section=>{
+        const textMatches = Array.from(section.querySelectorAll('.hex'))
+            .some(hex => hex.innerText.toLowerCase().includes(query));
+        section.style.display = textMatches || query === '' ? 'flex' : 'none';
+    });
+});
+</script>
+
+</body>
+</html>
