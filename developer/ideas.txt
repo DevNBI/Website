@@ -1,0 +1,9 @@
+Home
+ Navigation bar
+ Hero section
+ Explore section
+ Cards section
+ Testimonials section
+ Socials & contact section
+ Application download section
+ Footer
